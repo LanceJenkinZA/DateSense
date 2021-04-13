@@ -8,7 +8,10 @@ import unittest
 class Datetest(object):
     '''Class for testing various formats'''
 
-    defaultData = datetime(2013, 4, 15, 14, 4, 11), datetime(2013, 10, 25, 10, 50, 13), datetime(2014, 1, 1, 2, 0, 0)
+    defaultData = [datetime(2013, 4, 15, 14, 4, 11),
+                   datetime(2001, 1, 2, 15, 20, 11),
+                   datetime(2013, 10, 25, 10, 50, 13),
+                   datetime(2014, 1, 1, 2, 0, 0)]
 
     def __init__(self, case=None, expected=None, data=None):
         '''Constructor'''
@@ -69,6 +72,10 @@ class TestDateSense(unittest.TestCase):
     def test_04(self):
         '''Check standard format'''
         assert Datetest(case="%Y-%m-%d %H:%M:%S").run()
+
+    def test_041(self):
+        '''Check standard format'''
+        assert Datetest(case="%Y-%m-%d %H:%M").run()
 
     def test_05(self):
         '''Check nonstandard format'''

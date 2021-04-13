@@ -164,10 +164,10 @@ class DsOptions(object):
     rule_pattern_tz = PatternRule(('%Z', '%z'), 1, pos_score=2)
 
     # American - months then days then years
-    rule_pattern_US_date = PatternRule((('%m', '%b', '%B'), '%d', ('%y', '%Y')), 2, pos_score=4)
+    rule_pattern_US_date = PatternRule((('%m', '%b', '%B'), '%d', ('%y', '%Y')), 2, pos_score=2)
 
     # American - word month then days
-    rule_pattern_US_Bd = PatternRule(('%d', ('%m', '%b', '%B'), ('%y', '%Y')), 2, pos_score=3)
+    rule_pattern_US_Bd = PatternRule(('%d', ('%m', '%b', '%B'), ('%y', '%Y')), 2, pos_score=2)
 
     # European - days then months then years
     rule_pattern_EU_date = PatternRule((('%B', '%b'), ' ', '%d'), 1, pos_score=2)
@@ -263,7 +263,6 @@ class DsOptions(object):
             DsOptions.rule_mutexc_months, DsOptions.rule_mutexc_wkdays, DsOptions.rule_mutexc_weeks
         )
 
-    # Constructor
     def __init__(self, format_rules, num_options, word_options, tz_offset_directive):
         """Constructs a DsOptions object.
         Returns the DsOptions object.

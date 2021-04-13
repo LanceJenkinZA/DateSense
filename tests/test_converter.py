@@ -1,7 +1,7 @@
 from collections import namedtuple
 from unittest import TestCase
 
-from converter import convert_format
+from datesense.converter import convert_format
 
 Data = namedtuple("Data", "input expected")
 

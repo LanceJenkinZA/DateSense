@@ -17,12 +17,10 @@ __version__ = '1.1.0'
 
 def detect_format(dates, format_rules=None, numeric_options=None, word_options=None, tz_offset_directive=None):
     """Initialize and process everything for a data set in one convenient
-    method. (Recommended you use this unless you're sure of what you're
-    doing.)
+    method. (Recommended you use this unless you're sure of what you're doing.)
     Returns a DsOptions object containing date format information.
 
-    :param dates: A set of identically-formatted date strings for which
-        the formatting should be detected.
+    :param dates: A set of identically-formatted date strings for which the formatting should be detected.
     :param format_rules: (optional) A set of rule objects such as those
         found in dsrules, which inform the parser of what assumptions it
         should make regarding how input data will normally be formatted.
@@ -36,7 +34,6 @@ def detect_format(dates, format_rules=None, numeric_options=None, word_options=N
     :param tz_offset_directive: (optional) Timezone offset directives
         are a special case - this string informs the parser of what
         directive to use for them. (You probably want this to be '%z'.)
-        Defaults to the value returned by
-        DsOptions.get_default_tz_offset_directive().
+        Defaults to the value returned by DsOptions.get_default_tz_offset_directive().
     """
     return DsOptions.detect_format(dates, format_rules, numeric_options, word_options, tz_offset_directive)
