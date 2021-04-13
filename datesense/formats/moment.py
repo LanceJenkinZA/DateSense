@@ -1,0 +1,31 @@
+""" Mapping from python to moment date format """
+
+mapping = {
+    "%a": "ddd",
+    "%A": "dddd",
+    "%w": "e",
+    "%d": "DD",
+    "%b": "MMM",
+    "%B": "MMMM",
+    "%m": "MM",
+    "%y": "YY",
+    "%Y": "YYYY",
+    "%H": "HH",
+    "%I": "hh",
+    "%p": "A",
+    "%M": "mm",
+    "%S": "ss",
+    "%f": "SSSSSSSSS",
+    "%z": "Z",
+    "%Z": "ZZ",
+    "%j": "DDDD",
+    "%U": "ww",
+    "%W": "ww",
+    "%c": "LLL",
+    "%x": "L",
+    "%X": "LTS",
+    "%%": "%",
+    "%G": "GGGG",
+    "%u": "E",
+    "%V": "WW"
+}

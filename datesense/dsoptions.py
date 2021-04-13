@@ -8,7 +8,7 @@ class attributes they reference, as well as the documentation for
 the rules classes and NumOption and WordOption classes for some
 examples and thorough descriptions of how things work.
 """
-
+from converter import convert_format
 from dstoken import DsToken
 from dsrules import *
 
@@ -605,16 +605,15 @@ class DsOptions(object):
 
     # These are methods for returning various string representations of this object
 
-    def get_format_string(self, replace_percent=True, blank_if_unrecognized=True):
+    def get_format_string(self, replace_percent=True, blank_if_unrecognized=True, representation=None):
         """Returns the date format as determined by the parser.
         :param replace_percent: (optional) In python date format strings
         literal '%' characters must be represented as '%%'. If this
         argument is set to true, the method will account for stray '%'
         characters by replacing them with '%%'.
-        :param blank_if_unrecognized: (optional) If True, a blank string
-        will be returned if either no directives were found or if the
-        parser recognized no possibilities for any token. Defaults to
-        True.
+        :param blank_if_unrecognized: (optional) If True, a blank string will be returned if either no
+            directives were found or if the parser recognized no possibilities for any token. Defaults to True.
+        :param representation: (optional) the date string format representation to return.
         """
         string = ''
         tokens = self.get_format_tokens()
@@ -629,7 +628,7 @@ class DsOptions(object):
             found_dir = found_dir or (not token.is_decorator())
             valid_tokens += 1
         if (not blank_if_unrecognized) or (found_dir and (valid_tokens == len(self.allowed))):
-            return string
+            return convert_format(string, representation)
         else:
             return ''
 
