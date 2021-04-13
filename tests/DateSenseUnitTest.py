@@ -1,6 +1,6 @@
 '''Unit tests for DateSense package'''
 
-import datesense
+from src import datesense
 from datetime import datetime
 import unittest
 
