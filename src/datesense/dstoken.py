@@ -163,7 +163,8 @@ class DsToken(object):
                 if tok.is_timezone():
                     token_previous = tokens[i - 1] if (i > 0) else None
                     token_next = tokens[i + 1] if (i < tokens_count - 1) else None
-                    check_prev = (not token_previous) or not (token_previous.is_number() or token_previous.is_timezone())
+                    check_prev = (not token_previous) or not (
+                                token_previous.is_number() or token_previous.is_timezone())
                     check_next = (token_next and token_next.is_number() and
                                   len(token_next.text) == DsToken.TIMEZONE_LENGTH)
                     if check_prev and check_next:

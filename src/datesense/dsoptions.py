@@ -8,9 +8,9 @@ class attributes they reference, as well as the documentation for
 the rules classes and NumOption and WordOption classes for some
 examples and thorough descriptions of how things work.
 """
-from converter import convert_format
-from dstoken import DsToken
-from dsrules import *
+from .converter import convert_format
+from .dstoken import DsToken
+from .dsrules import *
 
 
 class DsOptions(object):

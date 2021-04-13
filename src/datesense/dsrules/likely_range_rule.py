@@ -1,4 +1,4 @@
-from dstoken import DsToken
+from ..dstoken import DsToken
 
 
 class LikelyRangeRule(object):

@@ -9,7 +9,7 @@ the way the parser  works and what assumptions it's allowed to
 make regarding the formatting of its input, take a look at the
 documentation for DsOptions.py.
 """
-from dsoptions import DsOptions
+from .dsoptions import DsOptions
 
 # datesense version
 __version__ = '1.1.0'
